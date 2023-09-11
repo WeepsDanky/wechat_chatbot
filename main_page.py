@@ -6,44 +6,40 @@ Here"s our first attempt at using data to create a table:
 import streamlit as st
 import pandas as pd
 import numpy as np 
+import time
+import openai
 
-st.title("Uber pickups in NYC")
+st.title("ChatGPT-like clone")
 
-#%% fetch some data
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-DATE_COLUMN = "date/time"
-DATA_url = ('https://s3-us-west-2.amazonaws.com/'
-            'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
+if "openai_model" not in st.session_state:
+    st.session_state["openai_model"] = "gpt-3.5-turbo"
 
-@st.cache_data # cache data so that it is not loaded every time the page is refreshed
-def load_data(nrows):
-    data = pd.read_csv(DATA_url, nrows=nrows) # read data from url
-    lowercase = lambda x: str(x).lower() # create a lambda function to lowercase all column names 
-    data.rename(lowercase, axis="columns", inplace=True) # rename columns to lowercase
-    data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN]) # convert to datetime
-    return data 
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
-data_load_state = st.text("Loading data...")
-data = load_data(10000)
-data_load_state.text("Done! (using st.cache)")
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
 
-if st.checkbox('Show raw data'):
-    st.subheader('Raw data')
-    st.write(data)
+if prompt := st.chat_input("What is up, human?"):
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    with st.chat_message("user"):
+        st.markdown(prompt)
 
-#%% draw a histogram 
-st.subheader("Number of pickups by hour")
-
-hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0] # create a histogram of the data 
-st.bar_chart(hist_values)
-
-#%% plot data on a map
-st.subheader("Map of all pickups")
-st.map(data)
-
-hour_to_filter = st.slider("hour", 0, 23, 6) # add a slider to the sidebar
-filtered_data = data[data[DATE_COLUMN].dt.hour == 23] # filter data by hour 
-st.subheader(f"Map of all pickups at {hour_to_filter}:00")
-st.map(filtered_data)
-
-
+    with st.chat_message("assistant"):
+        message_placeholder = st.empty() # 
+        full_response = ""
+        for response in openai.ChatCompletion.create(
+            model=st.session_state["openai_model"],
+            messages=[
+                {"role": m["role"], "content": m["content"]}
+                for m in st.session_state.messages
+            ],
+            stream=True,
+        ):
+            full_response += response.choices[0].delta.get("content", "")
+            message_placeholder.markdown(full_response + "▌")
+        message_placeholder.markdown(full_response)
+    st.session_state.messages.append({"role": "assistant", "content": full_response})
