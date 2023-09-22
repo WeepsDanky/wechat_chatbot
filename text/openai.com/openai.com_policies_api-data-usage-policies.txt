@@ -1,0 +1,17 @@
+
+
+
+Enterprise privacy
+
+
+
+
+
+
+
+
+
+
+
+
+CloseSearch Submit Skip to main contentSite NavigationResearchOverviewIndexGPT-4DALLÂ·E 3APIOverviewData privacyPricingDocsChatGPTOverviewEnterpriseTry ChatGPTSafetyCompanyAboutBlogCareersResidencyCharterSecurityCustomer storiesSearch Navigation quick links Log inGet startedMenu Mobile Navigation CloseSite NavigationResearchAPIChatGPTSafetyCompany Quick Links Log inGet startedSearch Submit Enterprise privacy at OpenAITrust and privacy are at the core of our mission at OpenAI. Weâre committed to privacy and security for ChatGPT Enterprise and our API Platform.Quick linksRead commitmentsOur commitmentsOwnership: You own and control your dataWe do not train on your business data, and our models donât learn from your usageYou own your inputs and outputs (where allowed by law)You control how long your data is retained (ChatGPT Enterprise)Control: You decide who has accessEnterprise-level authentication through SAML SSOFine-grained control over access and available featuresCustom models are yours alone to use, they are not shared with anyone elseSecurity: Comprehensive complianceWeâve been audited for SOC 2 complianceData encryption at rest (AES-256) and in transit (TLS 1.2+)Visit our Trust Portal to understand more about our security measuresNeed more help?If you have further questions or require assistance, please reach out to our support team via ourÂ Help Center.ResearchOverviewIndexGPT-4DALLÂ·E 3APIOverviewData privacyPricingDocsChatGPTOverviewEnterpriseTry ChatGPTCompanyAboutBlogCareersCharterSecurityCustomer storiesSafetyOpenAI Â© 2015âââ2023Terms & policiesPrivacy policyBrand guidelinesSocialTwitterYouTubeGitHubSoundCloudLinkedInBack to top

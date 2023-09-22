@@ -1,0 +1,17 @@
+
+
+
+ChatGPT Enterprise
+
+
+
+
+
+
+
+
+
+
+
+
+CloseSearch Submit Skip to main contentSite NavigationResearchOverviewIndexGPT-4DALLÂ·E 3APIOverviewData privacyPricingDocsChatGPTOverviewEnterpriseTry ChatGPTSafetyCompanyAboutBlogCareersResidencyCharterSecurityCustomer storiesSearch Navigation quick links Log inGet startedMenu Mobile Navigation CloseSite NavigationResearchAPIChatGPTSafetyCompany Quick Links Log inGet startedSearch Submit ChatGPTââEnterpriseEnterprise-grade security & privacy and the most powerful version of ChatGPT yet.Quick linksContact salesRead launch announcementSecurity & privacyProtect your company dataCustomer prompts or data are not used for training modelsData encryption at rest (AES-256) and in transit (TLS 1.2+)SOC 2 compliantRead our privacy commitmentsAICPASOC2Analyze this CSV file... Summarize this doc...Write me a marketing tagline...Help me debug this piece of code...Explain this term...Compare spend categories for...Write me an onboarding resource...âHalf of all Zapier employees are now leveraging AI in their work. ChatGPT Enterprise lets us work with sensitive data due to the enhanced security and privacy controls.âMike Knoop, Co-founder & Head of Zapier AIDeploy with easeScalable deployment toolsDedicated admin console and easy bulk member managementSSO and Domain VerificationAnalytics dashboard to understand usageACME, IncMembersAnalyticsAdmin settingsIdentity & provisioningTotalsUsers520Conversations5,5238Messages34.9kDaily usageMembersInvite membersThomas DegryAdminthomasd@example.comRuby Chenruby@example.comJustin Wangjustin@example.comKendra Reimbachkendra@example.comJane Doejane@example.comâChatGPT Enterprise allows us to continue to be a pioneer in AI while helping our people and clients benefit from productivity and new growth opportunities associated with AI in a responsible way.âKevin Ellis, Chair and Senior Partner at PwC UKMove fasterFast, uncapped GPT-4Unlimited, high-speed access to GPT-4 and Advanced Data Analysis*32k token context windows for 4X longer inputs and memoryShareable chat templates for your company to collaborateSend a message2021.xlsxXLSX2022.csvCSV705030100Amount (in $ Thousands)MarketingOperationsResearchPayrollExternalSpend categories202120224x longer inputs & conversationswith 32k context windows2x speed gains*with GPT-4 access*Actual speed varies depending on utilization of our systems 80% of Fortune 500 companies already have employees using ChatGPT for work.**Percentage of Fortune 500 companies with registered ChatGPT consumer accounts, as determined by analyzing accounts associated with corporate email domains.  Compare ChatGPT plans Free$0 per person/monthÂ  Try it nowÂ GPT-3.5Regular model updatesPlus$20 per person/monthÂ  Upgrade nowEverything in Free, and:GPT-4*Advanced Data Analysis*Plugins*Early access to beta features*Usage capped at 50 messages every three hoursEnterpriseÂ  Contact salesEverything in Plus, and:Unlimited high-speed GPT-4*Longer inputs with 32k token contextUnlimited Advanced Data AnalysisInternally shareable chat templatesDedicated admin consoleSSO, domain verification, and analyticsAPI credits to build your own solutionsEnterprise data is not used for training*Actual speed varies depending on utilization of our systemsResearchOverviewIndexGPT-4DALLÂ·E 3APIOverviewData privacyPricingDocsChatGPTOverviewEnterpriseTry ChatGPTCompanyAboutBlogCareersCharterSecurityCustomer storiesSafetyOpenAI Â© 2015âââ2023Terms & policiesPrivacy policyBrand guidelinesSocialTwitterYouTubeGitHubSoundCloudLinkedInBack to top

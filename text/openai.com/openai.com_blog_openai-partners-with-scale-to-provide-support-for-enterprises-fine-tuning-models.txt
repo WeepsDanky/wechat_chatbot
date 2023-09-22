@@ -1,0 +1,17 @@
+
+
+
+OpenAI partners with Scale to provide support for enterprises fine-tuning models
+
+
+
+
+
+
+
+
+
+
+
+
+CloseSearch Submit Skip to main contentSite NavigationResearchOverviewIndexGPT-4DALLÂ·E 3APIOverviewData privacyPricingDocsChatGPTOverviewEnterpriseTry ChatGPTSafetyCompanyAboutBlogCareersResidencyCharterSecurityCustomer storiesSearch Navigation quick links Log inGet startedMenu Mobile Navigation CloseSite NavigationResearchAPIChatGPTSafetyCompany Quick Links Log inGet startedSearch Submit OpenAI partners with Scale to provide support for enterprises fine-tuning modelsOpenAIâs customers can leverage Scaleâs AI expertise to customize our most advanced models.Illustration: Justin Jay WangAugust 24, 2023AuthorsOpenAI ProductOpenAI and Scale are joining forces to help more companies benefit from fine-tuning our most advanced models.Companies expect high performance, steerability, and customization when it comes to deploying AI in production. We recently launched fine-tuning for GPT-3.5 Turbo, and will bring fine-tuning to GPT-4 this fall. With fine-tuning, companies can now securely customize our most advanced models on proprietary data, making our most powerful models even more useful. As always, data sent in and out of the fine-tuning API is owned by the customer and is not used by OpenAI, or any other organization, to train other models.Weâre working with Scale as a preferred partner to extend the benefits of our fine-tuning capability given their experience helping enterprises securely and effectively leverage data for AI. Building robust enterprise-grade functionality requires rigorous data enrichment and model evaluation. Scale customers can now fine-tune OpenAI models just as they would through OpenAI, while also benefiting from Scaleâs enterprise AI expertise and Data Engine.Scale has already demonstrated value for customers by fine-tuning GPT-3.5 for Brex. Check out more details here.AuthorsOpenAI View all articlesResearchOverviewIndexGPT-4DALLÂ·E 3APIOverviewData privacyPricingDocsChatGPTOverviewEnterpriseTry ChatGPTCompanyAboutBlogCareersCharterSecurityCustomer storiesSafetyOpenAI Â© 2015âââ2023Terms & policiesPrivacy policyBrand guidelinesSocialTwitterYouTubeGitHubSoundCloudLinkedInBack to top
