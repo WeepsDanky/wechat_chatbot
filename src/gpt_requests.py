@@ -2,7 +2,7 @@ import openai
 import tiktoken 
 import os
 
-def gpt_request(role, prompt, model="gpt-3.5-turbo-0613"):
+def friend_chat(role, prompt, model="gpt-3.5-turbo-0613"):
     response = openai.ChatCompletion.create(
         model=model, 
         messages = [
@@ -13,6 +13,9 @@ def gpt_request(role, prompt, model="gpt-3.5-turbo-0613"):
     )
     return response['choices'][0]['message']['content']
         
+def todo_list_chat(role, prompt, model="gpt-3.5-turbo-0613"): 
+    pass
+
 
 def num_tokens_from_messages(messages, model="gpt-3.5-turbo-0613"):
   """Returns the number of tokens used by a list of messages."""

@@ -87,9 +87,12 @@ def reply_to_friends(model="gpt-3.5-turbo-0613"):
             if msg["is_self_msg"]:
                 print("收到了自己发送的消息！")
             else: 
-                response = gpt.gpt_request("user", msg["content"], model=model)
+                response = gpt.friend_chat("user", msg["content"], model=model)
                 w.send_text(to_wx=msg["wx_id"], msg=response)
                 time.sleep(2)
+
+def wechat_todo_list(): 
+    pass
 
 def main(): 
     initailize_wechat()
