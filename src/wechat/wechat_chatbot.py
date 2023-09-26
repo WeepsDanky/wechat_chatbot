@@ -10,15 +10,19 @@ import time
 import logging
 from queue import Queue 
 import os
+import sys 
 from bs4 import BeautifulSoup
 import json
 
-# 当前目录路径
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# 初始化微信 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+project_dir = "C:\\Users\\Administrator\\Documents\\GitHub\\digital_twin"
 logging.basicConfig(level=logging.INFO)  # 日志器
 msg_queue = Queue()  # 消息队列
 
+sys.path.append(os.path.join(project_dir, "src"))
+import gpt_requests as gpt
 
 def on_message(msg):
     """消息回调，建议异步处理，防止阻塞"""
@@ -31,8 +35,7 @@ def on_exit(wx_id):
     print("微信({})：已退出登录，请重新登录".format(wx_id))
 
 
-
-def retrieve_chat_history():
+def initailize_wechat(): 
     # 初始化微信
     w = WeChatPYApi(msg_callback=on_message, exit_callback=on_exit, logger=logging)
     errno, errmsg = w.start_wx()
@@ -46,15 +49,16 @@ def retrieve_chat_history():
     print("登陆成功！")
     # print(my_info)
 
+def retrieve_chat_history(wx_account, num_messages=1000, filepath='tests', filename="msg_0.txt"):
     friends = w.pull_list(pull_type=1)
-    selected_friends = [d for d in friends if d['wx_account'] == 'ljwb_Gww_dang_snghra'] # 选择一个人的聊天记录作为测试
+    selected_friends = [d for d in friends if d['wx_account'] == wx_account] # 选择一个人的聊天记录作为测试
     selected_wx_account = selected_friends[0]['wx_id']
     print(f"选择的好友是{selected_wx_account}")
 
-    # 获取聊天记录 - 这里以周易为例
+    # 获取聊天记录
     MSG0 = w.select_db(
     db_name="MSG0.db",
-    sql_text=f"select IsSender, CreateTime, StrContent from MSG where StrTalker = 'wxid_nqi1sx71l54e12' limit 1000; " # 最多1000条聊天记录
+    sql_text=f"select IsSender, CreateTime, StrContent from MSG where StrTalker = '{wx_account}' limit {num_messages}; "
     )
 
     # 清洗聊天记录，去除xml标签以方便构建prompt
@@ -65,21 +69,31 @@ def retrieve_chat_history():
         if not soup.find():
             valid_entries.append(item)
     # print("valid_entries are ", valid_entries)
-
     # chat_msg = [item['StrContent'] for item in valid_entries if item['StrContent']]
     chat_msg = valid_entries
-    with open("tests/msg_0.txt", "w", encoding='utf-8') as f:
+    full_path = os.path.join(project_dir, filepath, filename)
+    with open(full_path, "w", encoding='utf-8') as f:
         f.write(str(chat_msg))
-    print("聊天记录已保存到tests/msg_0.txt")
+    print(wx_account, "的聊天记录已保存到", full_path) 
 
     time.sleep(3)
     w.logout()
     
-
+# reply message as a GPT chatbot
+def reply_to_friends(model="gpt-3.5-turbo-0613"): 
+    while True:
+        msg = msg_queue.get()
+        if msg["type"] == 100:
+            if msg["is_self_msg"]:
+                print("收到了自己发送的消息！")
+            else: 
+                response = gpt.gpt_request("user", msg["content"], model=model)
+                w.send_text(to_wx=msg["wx_id"], msg=response)
+                time.sleep(2)
 
 def main(): 
-    retrieve_chat_history() 
-
+    initailize_wechat()
+    reply_to_friends()
 
 if __name__ == '__main__':
     try:

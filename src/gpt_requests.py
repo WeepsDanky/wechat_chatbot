@@ -1,8 +1,18 @@
 import openai
 import tiktoken 
+import os
 
-
-
+def gpt_request(role, prompt, model="gpt-3.5-turbo-0613"):
+    response = openai.ChatCompletion.create(
+        model=model, 
+        messages = [
+            {"role": "system", "content" : "I need you to be my personal secretary. I will give you previous chat records, and then you need to respond based on these chat messages. For example, if the other person sends you a message, 你今天晚上要来吃饭吗? You need to reply: 好的，我知道了我会转告给我的主人，问他今天要不要吃饭呢。"}, 
+            {"role": role, "content": prompt}
+            ], 
+        user = "mark"
+    )
+    return response['choices'][0]['message']['content']
+        
 
 def num_tokens_from_messages(messages, model="gpt-3.5-turbo-0613"):
   """Returns the number of tokens used by a list of messages."""
@@ -24,3 +34,13 @@ def num_tokens_from_messages(messages, model="gpt-3.5-turbo-0613"):
       raise NotImplementedError(f"""num_tokens_from_messages() is not presently implemented for model {model}.
   See https://github.com/openai/openai-python/blob/main/chatml.md for information on how messages are converted to tokens.""") 
 
+'''
+def main(): 
+    gpt_request("user", "你好")
+
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        os._exit(1)
+'''
