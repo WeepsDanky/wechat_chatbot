@@ -1,2 +1,0 @@
-class TestMP:
-    pass
