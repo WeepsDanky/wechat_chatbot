@@ -1,3 +1,0 @@
-itchat==1.2.32
-requests
-future
